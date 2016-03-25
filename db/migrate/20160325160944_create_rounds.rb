@@ -5,5 +5,6 @@ class CreateRounds < ActiveRecord::Migration
   		t.references :deck, null: false, index: true
 
   		t.timestamps null: false
+  	end
   end
 end

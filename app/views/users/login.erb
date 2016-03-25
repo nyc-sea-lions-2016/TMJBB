@@ -1,6 +1,6 @@
 <h2>Login</h2>
-<form action="/users/create" method="post">
+<form action="/users/login" method="get">
   <input type="text" name="user[username]" placeholder="username" value="<%= "#{@user.username}" %>"
-  <input type="text" name="user[password]" placeholder="password" value="<%= "#{@user.password}" %>"
+  <input type="password" name="user[password]" placeholder="password" value="<%= "#{@user.password}" %>"
   <input type="submit" value="Create">
 </form>

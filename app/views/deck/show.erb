@@ -2,3 +2,7 @@
 
 <h3> This deck is called: <%= @deck.name %>! </h3>
 
+<% @deck.cards.each do |card| %>
+	<p> Card number <%=card.id%>: <%= card.question %> </p>
+	<br>
+<% end %>

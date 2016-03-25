@@ -1,3 +1,6 @@
-<h1>Welcome to Flashcards</h1>
-<a href="/users/login">Login</a>
-<a href="/users/new">Create</a>
+<h2>Login</h2>
+<form action="/users/create" method="post">
+  <input type="text" name="user[username]" placeholder="username" value="<%= "#{@user.username}" %>"
+  <input type="text" name="user[password]" placeholder="password" value="<%= "#{@user.password}" %>"
+  <input type="submit" value="Create">
+</form>

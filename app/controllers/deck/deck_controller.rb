@@ -1,3 +1,3 @@
 get '/' do 
-  erb :index
+  erb :'/deck/index'
 end

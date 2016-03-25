@@ -1,6 +1,11 @@
+5.times do
+	User.create(username: Faker::Name.name, password: "a" )
+end
 
+2.times do
+	Deck.create(name: Faker::Beer.name, round_id: 1)
+end
 
-sweet_users = {'tim' =>'t', 'mike' => 'm', 'brian' => 'b', 'john' => 'j','brett' => 'b' }
-sweet_users.each do |name, pw|
-  User.create(username: name, password: pw)
+30.times do
+	Card.create(question: Faker::Hacker.say_something_smart, correct_answer: 42, deck_id: 1)
 end

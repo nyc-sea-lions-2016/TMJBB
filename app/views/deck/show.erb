@@ -6,3 +6,8 @@
 	<p> Card number <%=card.id%>: <%= card.question %> </p>
 	<br>
 <% end %>
+
+<!-- play game button -->
+<form name="start_game_button" method="get" action="/round">
+	<input type='submit' value='Play Game'>
+</form>

@@ -1,12 +1,10 @@
-get '/users/new' do
-  @user = User.new
+get '/' do
   erb :'/users/new'
 end
 
-post '/users/create' do
-  @user = User.create(params[:user])
-  session[:id] = @user.id
-  redirect "/users/show/#{@user.id}"
+get '/users/new' do
+  @user = User.new
+  erb :'/users/new'
 end
 
 get '/users/show/:id' do

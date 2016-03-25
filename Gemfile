@@ -13,6 +13,7 @@ gem 'activerecord', '~>4.2.0'
 gem 'rake'
 gem 'bcrypt'
 gem 'pry'
+gem 'faker'
 
 gem 'shotgun'
 
@@ -25,5 +26,4 @@ end
 
 group :test, :development do
   gem 'factory_girl'
-  gem 'faker'
 end

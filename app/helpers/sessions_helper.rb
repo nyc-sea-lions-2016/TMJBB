@@ -6,6 +6,7 @@ helpers do
 
   def logged_in?
     !!current_user.valid?
+
   end
 
 end

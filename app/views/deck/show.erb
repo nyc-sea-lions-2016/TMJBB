@@ -1,0 +1,13 @@
+<h2> Deck : <%= @deck.name %> </h2>
+
+<h3> This deck is called: <%= @deck.name %>! </h3>
+
+<% @deck.cards.each_with_index do |card, index| %>
+	<p> Card number <%=index + 1%>: <%= card.question %> </p>
+	<br>
+<% end %>
+
+<!-- play game button -->
+<form name="start_game_button" method="get" action="/round">
+	<input type='submit' value='Play Game'>
+</form>

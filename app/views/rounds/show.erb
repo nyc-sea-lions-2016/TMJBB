@@ -1,1 +1,8 @@
-<h2> this is the "play a game" page </h2>
+<h2> Question: </h2>
+<h2> <%= @card.question %> </h2>
+
+<form action="/guess" method="post">
+	Guess:
+	<input type="text" name="response" placeholder="type your guess">
+	<input type="submit" value="Submit">
+</form>

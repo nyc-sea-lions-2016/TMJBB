@@ -2,8 +2,8 @@
 
 <h3> This deck is called: <%= @deck.name %>! </h3>
 
-<% @deck.cards.each do |card| %>
-	<p> Card number <%=card.id%>: <%= card.question %> </p>
+<% @deck.cards.each_with_index do |card, index| %>
+	<p> Card number <%=index + 1%>: <%= card.question %> </p>
 	<br>
 <% end %>
 

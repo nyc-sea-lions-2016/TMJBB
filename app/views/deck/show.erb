@@ -8,6 +8,7 @@
 <% end %>
 
 <!-- play game button -->
-<form name="start_game_button" method="get" action="/round">
+<form name="start_game_button" method="post" action="/rounds">
+	<input name="deck_id" type="hidden" value="<%=@deck.id%>">
 	<input type='submit' value='Play Game'>
 </form>

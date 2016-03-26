@@ -3,14 +3,12 @@ post '/guess' do
     @errors = "Hey assface, you need to answer the question"
     erb :'/rounds/show'
   else
-    current_card
-    @guess = Guess.create(card_id: @card.id, round_id: session[:round_id], response: params[:response])
+    @card = Card.find_by(id: session[:current_card_id])
+    @guess = Guess.create(card_id: @card.id, round_id: params[:round_id], response: params[:response])
     if @guess.response == @card.correct_answer
-      @round = Round.find(session[:round_id])
-      @round.current_card_index += 1
-      @round.save
-      
+      @card.correct = true
+      @card.save
     end
-    redirect '/rounds'
+    redirect "/rounds/#{@guess.round_id}"
   end
 end

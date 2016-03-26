@@ -1,28 +1,30 @@
 enable :sessions
 
-post '/users/create' do
+# CREATE
+post '/register' do
   @user = User.create(params[:user])
   session[:id] = @user.id
   redirect "/users/show/#{@user.id}"
 end
 
-get '/users/login' do
+get '/login' do
   @user = User.new
-  erb :'/users/login'
+  erb :'/sessions/new'
 end
 
-get '/users' do
-  user = User.new(params[:user])
-  @user = User.find_by(username: params[:user][:username])
-  if @user && @user.authenticate(params[:user][:password])
+post '/login' do
+  @user = User.find_by(username: params[:username])
+  if @user && @user.authenticate(params[:password])
     session[:id] = @user.id
     redirect "/users/show/#{@user.id}"
   else
-    erb :'/users/login'
+    @errors = "you fucked up asshole"
+    erb :'/sessions/new'
   end
+
 end
 
-get '/users/logout' do
+get '/logout' do
   session.clear
-  redirect '/users/login'
+  redirect '/'
 end

@@ -1,11 +1,13 @@
 post '/rounds' do
-  @round = Round.new(user_id: session[:id], deck_id: params[:deck_id])
-  @card = Deck.find_by(id: params[:deck_id]).cards.first # Need to capture card id on round
+  @round = Round.create(user_id: session[:id], deck_id: params[:deck_id])
+  session[:round_id] = @round.id
+  current_deck
+  current_card
   erb :'/rounds/show'
 end
 
 get '/rounds' do
-  @round = Round.new
-  @card = Card.new
+  current_card
+  # current_index
   erb :'/rounds/show'
 end

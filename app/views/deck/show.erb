@@ -2,6 +2,12 @@
 
 <h3> This deck is called: <%= @deck.name %>! </h3>
 
+<!-- play game button -->
+<form name="start_game_button" method="post" action="/rounds">
+	<input name="deck_id" type="hidden" value="<%=@deck.id%>">
+	<input type='submit' value='Play Game'>
+</form>
+
 <% @deck.cards.each_with_index do |card, index| %>
 	<p> Card number <%=index + 1%>: <%= card.question %> </p>
 	<br>
@@ -10,8 +16,3 @@
 <h3> Deck Stats </h3>
 
 
-<!-- play game button -->
-<form name="start_game_button" method="post" action="/rounds">
-	<input name="deck_id" type="hidden" value="<%=@deck.id%>">
-	<input type='submit' value='Play Game'>
-</form>

@@ -7,5 +7,5 @@ end
 end
 
 30.times do
-	Card.create(question: Faker::Hacker.say_something_smart, correct_answer: 42, deck_id: 1)
+	Card.create(question: Faker::Hacker.say_something_smart, correct_answer: 42, deck_id: rand(1..Deck.count))
 end

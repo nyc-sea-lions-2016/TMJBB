@@ -1,6 +1,10 @@
 <h2> Question: </h2>
 <h2> <%= @card.question %> </h2>
 
+<% if @errors %>
+<%= @errors %>
+<% end %>
+
 <form action="/guess" method="post">
 	Guess:
 	<input type="text" name="response" placeholder="type your guess">

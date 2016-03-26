@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+/*body styling*/
+body {
+  background-image: url(../imgs/ignasi.png);
+  width:98%;
+  margin:auto;
+
+}
+/*header stylings*/
+header {
+  border:2px solid black;
+  border-radius: 7px;
+  padding: 1%;
+  background-image: url(../imgs/school.png);
+
+}
+
+header span {
+  color: rgb(96, 220, 144);
+}
+
+header img {
+  width:20%;
+  /*display:inline-block;
+*/}
+
+header h1{
+  float:right;
+  clear:all;
+  font-family: 'Fredoka One', cursive;
+  color:rgb(170, 123, 210);
+}
+/*nav stylings*/
+nav  {
+  margin:1%;
+  float:right;
+  clear:both;
+/*  background-color:yellow;*/
+}
+
+nav a {
+  text-decoration: none;
+  margin:1em;
+  color:rgb(59, 59, 59);
+}
+
+.sliding {
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    width: 0px;
+    transition: 0.5s ease;
+    white-space: nowrap;
+    height: 25px;
+}
+.sliding:hover {
+    border-bottom: 3px solid rgb(105, 202, 249);
+    width: 200px;
+}
+/*form stylings*/
+form {
+  border:2px solid black;
+  border-radius: 10px;
+  width:25%;
+  margin:auto;
+  padding:1%;
+  background-image:url(../imgs/school.png);
+}
+
+form h2 {
+  font-size:1em;
+  margin-bottom: 0;
+
+}
+
+form input {
+  margin: 1%;
+  border-radius: 7px;
+}
+
+.button:hover {
+  background-color: rgb(105, 202, 249);
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+}
+

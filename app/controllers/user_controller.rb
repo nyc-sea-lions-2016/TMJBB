@@ -1,4 +1,5 @@
 get '/' do
+  @user = User.new
   erb :'/users/new'
 end
 

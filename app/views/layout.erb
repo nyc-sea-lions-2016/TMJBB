@@ -19,17 +19,20 @@
 </head>
 <body>
   <header>
-    <img src="../imgs/flash-cards.jpg">
+  <!--   <section class="logo"> -->
+      <img src="../imgs/index_card.gif">
+<!--     </section> -->
     <h1>Welcome to <span>Flash Cards!</span></h1>
     <nav>
       <% if logged_in? %>
-      <a class="sliding" href="/users/new">Register</a>
-      <a class="sliding" href="/login">Login</a>
-      <% @user = current_user %>
-      <h6>Hey <%=@user.username%>!<h6>
+        <a class="sliding" href="/deck/index">Play</a>
+        <a class="sliding" href="/logout">Logout</a>
+        <% @user = current_user %>
+        <h6>Hey <%=@user.username%>!<h6>
       <% else %>
-      <a class="sliding" href="/deck/index">Play</a>
-      <a class="sliding" href="/logout">Logout</a>
+        <a class="sliding" href="/users/new">Register</a>
+        <a class="sliding" href="/login">Login</a>
+
       <% end %>
     </nav>
   </header>

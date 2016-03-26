@@ -18,7 +18,7 @@ post '/login' do
     session[:id] = @user.id
     redirect "/users/show/#{@user.id}"
   else
-    @errors = "you fucked up asshole"
+    @errors = "you messed up"
     erb :'/sessions/new'
   end
 

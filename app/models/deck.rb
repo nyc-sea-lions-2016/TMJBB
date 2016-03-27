@@ -12,12 +12,12 @@ class Deck < ActiveRecord::Base
       else
         card.guesses.each do |guess|
           unless guess.correct
-            cards_left << card
+            cards_left << card if guess.user_id == self.rounds.find_by(deck_id: id).user_id
           end
         end
       end
     end
-    # cards_left.select { |card| card.}
+    cards_left
   end
 
   def get_card

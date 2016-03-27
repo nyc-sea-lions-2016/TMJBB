@@ -6,8 +6,8 @@ class Round < ActiveRecord::Base
   validates :user_id, presence: true
   validates :deck_id, presence: true
 
-    def game_over?
-    self.deck.cards.where(correct: false).empty?
+  def game_over?
+    self.deck.remaining_cards.empty?
   end
 
 end

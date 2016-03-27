@@ -1,0 +1,12 @@
+<h2>Login</h2>
+<% if @errors %>
+<%= @errors %>
+<% end %>
+
+<form action="/login" method="post">
+  <h2>Username</h2>
+  <li><input type="text" name="username"></li>
+  <h2>Password</h2>
+  <li><input type="password" name="password"></li>
+  <input class="button" type="submit" value="Login">
+</form>

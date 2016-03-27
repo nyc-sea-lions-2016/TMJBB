@@ -1,6 +1,8 @@
-<h2>New User</h2>
-<form action="/users/create" method="post">
-  <input type="text" name="user[username]" placeholder="username" value="<%= "#{@user.username}" %>"><br>
-  <input type="password" name="user[password]" placeholder="password" value="<%= "#{@user.password}" %>"><br>
-  <input type="submit" value="Create">
+<h2>Sign Up</h2>
+<form action="/register" method="post">
+  <h2>Username</h2>
+  <input type="text" name="user[username]"  value="<%= "#{@user.username}" %>"><br>
+  <h2>Password</h2>
+  <input type="password" name="user[password]" value="<%= "#{@user.password}" %>"><br>
+  <input class="button" type="submit" value="Create">
 </form>

@@ -1,2 +1,10 @@
-<h1> Decks <h1>
+<h2> Playing decks <h2>
+
+
+	<h3>Available Decks</h3>
+<ul>
+<% @decks.each do |deck| %>
+	<li><a href="/deck/<%= deck.id %>">Play Deck: <%= deck.name %></a></li>
+<% end %>
+</ul>
 

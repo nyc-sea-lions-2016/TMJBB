@@ -1,0 +1,13 @@
+<h2> Question: </h2>
+<h2> <%= @card.question %> </h2>
+
+<% if @errors %>
+<%= @errors %>
+<% end %>
+
+<form action="/guess" method="post">
+	Guess:
+	<input type="text" name="response" placeholder="type your guess">
+	<input type='hidden' name='round_id' value="<%=@round.id%>">
+	<input type="submit" value="Submit">
+</form>

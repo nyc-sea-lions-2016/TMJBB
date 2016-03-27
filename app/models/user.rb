@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
-
-  has_many :decks
+  has_many :guesses
   has_many :rounds
 
   validates :username, presence: true, uniqueness: true

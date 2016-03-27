@@ -11,8 +11,7 @@ class Round < ActiveRecord::Base
   end
 
   def first_try
-    self.deck.cards.count { |card| card.guesses.length == 1 }
-    binding.pry
+    self.deck.cards.count { |card| card.guesses.length == 1 } || 0
   end
 
   def correct_guesses

@@ -1,6 +1,6 @@
 post '/guess' do
   if params[:response] == ""
-    @errors = "Hey assface, you need to answer the question"
+    @errors = "Hey arse, you need to answer the question"
     erb :'/rounds/show'
   else
     @card = Card.find_by(id: session[:current_card_id])

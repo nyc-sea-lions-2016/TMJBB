@@ -1,23 +1,22 @@
 class Round < ActiveRecord::Base
-  has_many :guesses
-  belongs_to :user
-  belongs_to :deck
-  
-  validates :user_id, presence: true
-  validates :deck_id, presence: true
+    has_many :guesses
+    belongs_to :user
+    belongs_to :deck
 
-  # def game_over?
-  #   self.deck.users_remaining_cards.empty?
-  # end
+    validates :user_id, presence: true
+    validates :deck_id, presence: true
 
-  def first_try
-    # self.deck.cards.count { |card| card.guesses.length == 1 } count seems to conflict with sql count
-   counter = 0
-   self.deck.cards.each { |card| counter += 1 if card.guesses.length == 1 }
-   counter
-  end
+    def first_try(users_guesses)
+        card_ids = self.deck.cards.map { |card| card.id }
 
-  def correct_guesses
-    self.guesses.where(correct: true).length
-  end
+        array = card_ids.map do |placeholder|
+            users_guesses.select { |guess| guess.card_id == placeholder }
+        end
+        
+        array.select { |guesses| guesses.length == 1 }.length
+    end
+
+    def correct_guesses
+        self.guesses.where(correct: true).length
+    end
 end

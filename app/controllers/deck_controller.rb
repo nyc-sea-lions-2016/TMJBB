@@ -1,5 +1,4 @@
 get '/deck/index' do
-  # @deck = Deck.new #What is this for?
   @decks = Deck.all
   erb :'/deck/index'
 end

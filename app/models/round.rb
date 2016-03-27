@@ -6,9 +6,9 @@ class Round < ActiveRecord::Base
   validates :user_id, presence: true
   validates :deck_id, presence: true
 
-  def game_over?
-    self.deck.remaining_cards.empty?
-  end
+  # def game_over?
+  #   self.deck.users_remaining_cards.empty?
+  # end
 
   def first_try
     # self.deck.cards.count { |card| card.guesses.length == 1 } count seems to conflict with sql count

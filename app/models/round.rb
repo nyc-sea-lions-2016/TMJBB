@@ -11,7 +11,10 @@ class Round < ActiveRecord::Base
   end
 
   def first_try
-    self.deck.cards.count { |card| card.guesses.length == 1 } || 0
+    # self.deck.cards.count { |card| card.guesses.length == 1 } count seems to conflict with sql count
+   counter = 0
+   self.deck.cards.each { |card| counter += 1 if card.guesses.length == 1 }
+   counter
   end
 
   def correct_guesses

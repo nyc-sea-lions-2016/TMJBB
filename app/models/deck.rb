@@ -6,13 +6,16 @@ class Deck < ActiveRecord::Base
 
   def remaining_cards
     cards_left = []
+    this_deck = self
     self.cards.each do |card|
       if card.guesses.empty? 
         cards_left << card
       else
         card.guesses.each do |guess|
-          unless guess.correct
-            cards_left << card if guess.user_id == self.rounds.find_by(deck_id: id).user_id
+          if guess.correct
+            cards_left.delete(card)
+          else
+            cards_left << card if guess.user_id == this_deck.rounds.find_by(deck_id: id).user_id
           end
         end
       end

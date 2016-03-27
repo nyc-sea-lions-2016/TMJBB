@@ -2,4 +2,10 @@
 <h2><%=%></h2>
 <h3>Stats</h3>
 
+  <%@user.rounds.each do |round|%>
+
+ <h3>Deck: <%="#{Deck.find_by(id: round.deck_id).name}"%> | First try: <%=round.first_try%> | Ratio: <%=round.correct_guesses%> / <%=round.guesses.length%></h3>
+
+    <%end%>
+
 

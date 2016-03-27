@@ -11,6 +11,6 @@ end
 
 # SHOW
 get '/users/show/:id' do
-  @user = User.find(params[:id])
+  @user = User.find(params[:id]) #current user ????
   erb :'/users/show'
 end

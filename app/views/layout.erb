@@ -22,14 +22,13 @@
     <img src="../imgs/flash-cards.jpg">
     <h1>Welcome to <span>Flash Cards!</span></h1>
     <nav>
-      <% @user = current_user %>
-      <% if logged_in? %>
+
         <a class="sliding" href="/deck/index">Play</a>
-        <a class="sliding" href="/logout">Logout</a>
-      <% else %>
-        <a class="sliding" href="/users/new">Register</a>
         <a class="sliding" href="/login">Login</a>
-      <% end %>
+
+        <a class="sliding" href="/users/new">Register</a>
+        <a class="sliding" href="/logout">Logout</a>
+
     </nav>
   </header>
   <%= yield %>

@@ -10,4 +10,12 @@ class Round < ActiveRecord::Base
     self.deck.remaining_cards.empty?
   end
 
+  def first_try
+    self.deck.cards.count { |card| card.guesses.length == 1 }
+    binding.pry
+  end
+
+  def correct_guesses
+    self.guesses.where(correct: true).length
+  end
 end

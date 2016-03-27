@@ -6,9 +6,8 @@ end
 
 get '/rounds/:id' do
   @round = Round.find(params[:id])
-
   if @round.game_over?
-    @user = User.find_by(session[:id])
+    @user = User.find_by(id: session[:id])
     erb :"/users/show"
   else
     @card = @round.deck.get_card

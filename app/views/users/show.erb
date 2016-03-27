@@ -2,10 +2,21 @@
 <h2><%=%></h2>
 <h3>Stats</h3>
 
-  <%@user.rounds.each do |round|%>
-
- <h3>Deck: <%="#{Deck.find_by(id: round.deck_id).name}"%> | First try: <%=round.first_try%> | Ratio: <%=round.correct_guesses%> / <%=round.guesses.length%></h3>
-
-    <%end%>
-
-
+<table border="1px solid">
+	<tr>
+		<td>Deck</td>
+		<td>Date</td>
+		<td>Cards in Deck</td>
+		<td>First Guess Correct</td>
+		<td>Total Guesses</td>
+	</tr>
+	<%@user.rounds.each do |round|%>
+	<tr>
+		<td><%="#{Deck.find_by(id: round.deck_id).name}"%></td>
+		<td><%=round.updated_at%></td>
+		<td><%=round.first_try%></td>
+		<td><%=round.correct_guesses%></td>
+		<td><%=round.guesses.length%></td>
+		<%end%>
+	</tr>
+</table>

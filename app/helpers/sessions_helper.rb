@@ -8,4 +8,8 @@ helpers do
     !!current_user
   end
 
+  def users_guesses
+  	users_guesses = Guess.where(user_id: session[:id])
+  end
+  
 end
